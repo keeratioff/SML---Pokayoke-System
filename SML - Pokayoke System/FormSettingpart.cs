@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace SML___Pokayoke_System
 {
-    public partial class FormSettingVinNumber : Form
+    public partial class FormSettingpart : Form
     {
-        public FormSettingVinNumber()
+        public FormSettingpart()
         {
             InitializeComponent();
+        }
+
+        private void textBoxsearchmodelcode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormSettingpart_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

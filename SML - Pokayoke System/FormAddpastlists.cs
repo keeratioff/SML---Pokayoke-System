@@ -53,8 +53,11 @@ namespace SML___Pokayoke_System
             Location_File_Tmp = "C:/SSS";
             Read_Systemfile(Location_File_Tmp + "\\System file local.txt");
             Local_Conn = $"Data Source={Ip_Addr_Local};Initial Catalog={Catalog_Local};User ID={Sql_usr_Local};password={Sql_pw_Local}";
+            //combocox_partlist();
+            combobox_item();
             Create_table();
             ShowGrid_All();
+            Autocomplete();
         }
 
         #region "Read System File"
@@ -138,7 +141,81 @@ namespace SML___Pokayoke_System
             metroGridmodel.Columns[3].HeaderText = "Partlist";
             metroGridmodel.Columns[4].HeaderText = "Operation Name";
         }
+        #endregion
 
+        private void Autocomplete()
+        {
+            try
+            {
+                AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+                SqlConnection con = new SqlConnection(Local_Conn);
+                con.Open();
+                string sql = "select * from data_part_local where working = '1'";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader sdr = null;
+                sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    col.Add(sdr["part_no"].ToString());
+                }
+                sdr.Close();
+                textBoxpartlist.AutoCompleteCustomSource = col;
+                con.Close();
+            }
+            catch (Exception error)
+            {
+                _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
+            }
+        }
+
+        #region "Combobox partlist"
+        private void combocox_partlist()
+        {
+            //try
+            //{
+            //    var dt = new DataTable();
+            //    using (var conn = new SqlConnection(Local_Conn))
+            //    {
+            //        var check = conn.CreateCommand();
+            //        check.CommandText = "Select * from data_part_local where working = '1'";
+            //        var sda = new SqlDataAdapter(check);
+            //        sda.Fill(dt);
+            //    }
+            //    foreach (DataRow dr in dt.Rows)
+            //    {
+            //        comboBoxpartlist.Items.Add(dr["part_no"]);
+            //    }
+            //}
+            //catch (Exception error)
+            //{
+            //    _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
+            //}
+        }
+        #endregion
+
+        #region "Combobox item"
+        private void combobox_item()
+        {
+            try
+            {
+                var dt = new DataTable();
+                using (var conn = new SqlConnection(Local_Conn))
+                {
+                    var check = conn.CreateCommand();
+                    check.CommandText = "select distinct buyer_code from data_master_list_local where working = 1 order by buyer_code";
+                    var sda = new SqlDataAdapter(check);
+                    sda.Fill(dt);
+                }
+                foreach (DataRow dr in dt.Rows)
+                {
+                    comboBoxbuyercode.Items.Add(dr["buyer_code"]);
+                }
+            }
+            catch (Exception error)
+            {
+                _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
+            }
+        }
         #endregion
 
         #region "ShowGrid All"
@@ -175,7 +252,7 @@ namespace SML___Pokayoke_System
                 using (var conn = new SqlConnection(Local_Conn))
                 {
                     var cmd = conn.CreateCommand();
-                    cmd.CommandText = $"Select * from data_master_list_local where model_code = '{textBoxmodelcode.Text}' and buyer_code = '{textBoxbuyercode.Text}' and working = '1'";
+                    cmd.CommandText = $"Select * from data_master_list_local where model_code = '{textBoxmodelcode.Text}' and buyer_code = '{comboBoxbuyercode.Text}' and working = '1'";
                     var sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
                 }
@@ -192,29 +269,76 @@ namespace SML___Pokayoke_System
         #endregion
 
         #region "Text Change for Model Code"
-        private void textBoxmodelcode_TextChanged(object sender, EventArgs e)
+        private void textBoxsearchmodelcode_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBoxsearchmodelcode.Text = "";
+        }
+
+        private void textBoxsearchmodelcode_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                Create_table();
-                var dt = new DataTable();
-                using (var conn = new SqlConnection(Local_Conn))
+                if (textBoxsearchmodelcode.TextLength > 1)
                 {
-                    var check = conn.CreateCommand();
-                    check.CommandText = "Select * from data_master_list_local where model_code Like '%" + textBoxmodelcode.Text + "%' and working = '1'";
-                    var sda = new SqlDataAdapter(check);
-                    sda.Fill(dt);
+                    Create_table();
+                    var dt = new DataTable();
+                    using (var conn = new SqlConnection(Local_Conn))
+                    {
+                        var check = conn.CreateCommand();
+                        check.CommandText = "Select * from data_master_list_local where model_code Like '%" + textBoxsearchmodelcode.Text + "%' and working = '1'";
+                        var sda = new SqlDataAdapter(check);
+                        sda.Fill(dt);
+                    }
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        metroGridmodel.Rows.Add(dr["model_base"], dr["model_code"], dr["buyer_code"], dr["part_no_sync"], dr["operation_name"]);
+                    }
                 }
-                foreach (DataRow dr in dt.Rows)
+                //else
+                //{
+                //    metroGridmodel.Columns.Clear();
+                //    metroGridmodel.Rows.Clear();
+                //}
+            }
+            catch (Exception error)
+            {
+                _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
+            }
+        }
+        #endregion
+
+        #region "Text Change for Model Base"
+
+        private void textBoxsearchmodelbase_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBoxsearchmodelbase.Text = "";
+        }
+
+        private void textBoxsearchmodelbase_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBoxsearchmodelbase.TextLength > 1)
                 {
-                    metroGridmodel.Rows.Add(dr["model_base"], dr["model_code"], dr["buyer_code"], dr["part_no_sync"], dr["operation_name"]);
+                    Create_table();
+                    var dt = new DataTable();
+                    using (var conn = new SqlConnection(Local_Conn))
+                    {
+                        var check = conn.CreateCommand();
+                        check.CommandText = "Select * from data_master_list_local where model_base Like '%" + textBoxsearchmodelbase.Text + "%' and working = '1'";
+                        var sda = new SqlDataAdapter(check);
+                        sda.Fill(dt);
+                    }
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        metroGridmodel.Rows.Add(dr["model_base"], dr["model_code"], dr["buyer_code"], dr["part_no_sync"], dr["operation_name"]);
+                    }
                 }
             }
             catch (Exception error)
             {
                 _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
             }
-
         }
         #endregion
 
@@ -228,9 +352,9 @@ namespace SML___Pokayoke_System
                 var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    if (textBoxbuyercode.Text == "" || textBoxbuyercode.Text == null || textBoxmodelcode.Text == "" || textBoxmodelcode.Text == null || textBoxpartlist.Text == "" || textBoxpartlist.Text == null || textBoxoperationname.Text == "" || textBoxoperationname.Text == null || textBoxmodelbase.Text == "" || textBoxmodelbase.Text == null)
+                    if (textBoxmodelcode.Text == "" || textBoxmodelcode.Text == null || textBoxmodelbase.Text == "" || textBoxmodelbase.Text == null || textBoxoperationname.Text == "" || textBoxoperationname.Text == null || textBoxpartlist.Text == "" || textBoxpartlist.Text == null)
                     {
-                        MessageBox.Show(" กรุณากรอกข้อมูลให้ครบถ้วนก่อนดำเนินการต่อ ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วนก่อนดำเนินการต่อ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -238,41 +362,49 @@ namespace SML___Pokayoke_System
                         using (var conn = new SqlConnection(Local_Conn))
                         {
                             var check = conn.CreateCommand();
-                            check.CommandText = $"Select * From data_master_list_local where model_code = '{textBoxmodelcode.Text}' and working = '1'";
+                            check.CommandText = $"Select * from data_part_local where part_no = '{textBoxpartlist.Text}' and working = '1'";
                             var sda = new SqlDataAdapter(check);
                             sda.Fill(dt);
                         }
-                        int count_check = dt.Rows.Count;
-                        if (count_check >= 1)
-                        {
-                            MessageBox.Show(" มีข้อมูลซ้ำในระบบ, กรูณาตรวจสอบอีกครั้ง ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            textBoxbuyercode.Text = "";
-                            textBoxmodelcode.Text = "";
-                            textBoxpartlist.Text = "";
-                            textBoxoperationname.Text = "";
-                            textBoxmodelbase.Text = "";
-                            Create_table();
-                            ShowGrid_All();
-                        }
-                        else
+                        int count_rows_check = dt.Rows.Count;
+                        if (count_rows_check >= 1)
                         {
                             string add_model_code = textBoxmodelcode.Text;
                             string add_model_base = textBoxmodelbase.Text;
-                            string add_buyer_code = textBoxbuyercode.Text;
+                            // string add_buyer_code = textBoxbuyercode.Text;
+                            string add_buyer_code = comboBoxbuyercode.Text;
                             string add_operation_name = textBoxoperationname.Text;
                             string add_partlist = textBoxpartlist.Text;
                             var cmd = $"Insert into data_master_list_local (model_base, model_code, buyer_code, part_no_sync, part_qty, operation_name, image, working) " +
                                 $"Values ('{add_model_base}', '{add_model_code}', '{add_buyer_code}', '{add_partlist}', '1' ,'{add_operation_name}', '{null}', '1')";
                             if (ExecuteSqlTransaction(cmd, Local_Conn, "ADD"))
                             {
-                                MessageBox.Show(" เพิ่มข้อมูลสำเร็จ ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                textBoxbuyercode.Text = "";
-                                textBoxmodelcode.Text = "";
-                                textBoxpartlist.Text = "";
-                                textBoxoperationname.Text = "";
-                                textBoxmodelbase.Text = "";
-                                Create_table();
-                                ShowGrid_All();
+                                var dt_checkpartlist = new DataTable();
+                                using (var conn = new SqlConnection(Local_Conn))
+                                {
+                                    var check = conn.CreateCommand();
+                                    check.CommandText = $"Select * from data_part_local where part_no = '{textBoxpartlist.Text}' and working = '1'";
+                                    var sda = new SqlDataAdapter(check);
+                                    sda.Fill(dt_checkpartlist);
+                                }
+                                int checkpartlist_count = dt_checkpartlist.Rows.Count;
+                                if (checkpartlist_count == 0)
+                                {
+                                    var cmd1 = $"Insert into data_part_local (part_no, part_qty, working) " +
+                                        $"Values ('{add_partlist}', 'null', '1')";
+                                    if (ExecuteSqlTransaction(cmd1, Local_Conn, "ADD"))
+                                    {
+                                        MessageBox.Show(" เพิ่มข้อมูลสำเร็จ ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        //textBoxbuyercode.Text = "";
+                                        comboBoxbuyercode.Text = "";
+                                        textBoxmodelcode.Text = "";
+                                        textBoxpartlist.Text = "";
+                                        textBoxoperationname.Text = "";
+                                        textBoxmodelbase.Text = "";
+                                        Create_table();
+                                        ShowGrid_All();
+                                    }
+                                }
                             }
                             else
                             {
@@ -286,6 +418,118 @@ namespace SML___Pokayoke_System
             {
                 _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
             }
+            #region "Hiden Code"
+            //try
+            //{
+            //    const string message = " คุณแน่ใจหรือไม่ ว่าต้องการเพิ่มข้อมูลนี้ในฐานข้อมูล? ";
+            //    const string caption = "Add Data Model to Database";
+            //    var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        if (textBoxbuyercode.Text == "" || textBoxbuyercode.Text == null || textBoxmodelcode.Text == "" || textBoxmodelcode.Text == null || textBoxpartlist.Text == "" || textBoxpartlist.Text == null || textBoxoperationname.Text == "" || textBoxoperationname.Text == null || textBoxmodelbase.Text == "" || textBoxmodelbase.Text == null)
+            //        {
+            //            MessageBox.Show(" กรุณากรอกข้อมูลให้ครบถ้วนก่อนดำเนินการต่อ ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        }
+            //        else
+            //        {
+            //            string add_model_code = textBoxmodelcode.Text;
+            //            string add_model_base = textBoxmodelbase.Text;
+            //            string add_buyer_code = textBoxbuyercode.Text;
+            //            string add_operation_name = textBoxoperationname.Text;
+            //            string add_partlist = textBoxpartlist.Text;
+            //            var cmd = $"Insert into data_master_list_local (model_base, model_code, buyer_code, part_no_sync, part_qty, operation_name, image, working) " +
+            //                $"Values ('{add_model_base}', '{add_model_code}', '{add_buyer_code}', '{add_partlist}', '1' ,'{add_operation_name}', '{null}', '1')";
+            //            if (ExecuteSqlTransaction(cmd, Local_Conn, "ADD"))
+            //            {
+            //                MessageBox.Show(" เพิ่มข้อมูลสำเร็จ ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //                textBoxbuyercode.Text = "";
+            //                textBoxmodelcode.Text = "";
+            //                textBoxpartlist.Text = "";
+            //                textBoxoperationname.Text = "";
+            //                textBoxmodelbase.Text = "";
+            //                Create_table();
+            //                ShowGrid_All();
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show(" ไม่สามารถเพิ่มข้อมูลได้, กรุณาตรวจสอบอีกครั้ง", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //            }
+            //        }
+            //    }
+
+            //}
+            //catch (Exception error)
+            //{
+            //    _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
+            //}
+
+
+            //try
+            //{
+            //    const string message = " คุณแน่ใจหรือไม่ ว่าต้องการเพิ่มข้อมูลนี้ในฐานข้อมูล? ";
+            //    const string caption = "Add Data Model to Database";
+            //    var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        if (textBoxbuyercode.Text == "" || textBoxbuyercode.Text == null || textBoxmodelcode.Text == "" || textBoxmodelcode.Text == null || textBoxpartlist.Text == "" || textBoxpartlist.Text == null || textBoxoperationname.Text == "" || textBoxoperationname.Text == null || textBoxmodelbase.Text == "" || textBoxmodelbase.Text == null)
+            //        {
+            //            MessageBox.Show(" กรุณากรอกข้อมูลให้ครบถ้วนก่อนดำเนินการต่อ ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        }
+            //        else
+            //        {
+            //            var dt = new DataTable();
+            //            using (var conn = new SqlConnection(Local_Conn))
+            //            {
+            //                var check = conn.CreateCommand();
+            //                check.CommandText = $"Select * From data_master_list_local where model_code = '{textBoxmodelcode.Text}' and working = '1'";
+            //                var sda = new SqlDataAdapter(check);
+            //                sda.Fill(dt);
+            //            }
+            //            int count_check = dt.Rows.Count;
+            //            if (count_check >= 1)
+            //            {
+            //                MessageBox.Show(" มีข้อมูลซ้ำในระบบ, กรูณาตรวจสอบอีกครั้ง ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //                textBoxbuyercode.Text = "";
+            //                textBoxmodelcode.Text = "";
+            //                textBoxpartlist.Text = "";
+            //                textBoxoperationname.Text = "";
+            //                textBoxmodelbase.Text = "";
+            //                Create_table();
+            //                ShowGrid_All();
+            //            }
+            //            else
+            //            {
+            //                string add_model_code = textBoxmodelcode.Text;
+            //                string add_model_base = textBoxmodelbase.Text;
+            //                string add_buyer_code = textBoxbuyercode.Text;
+            //                string add_operation_name = textBoxoperationname.Text;
+            //                string add_partlist = textBoxpartlist.Text;
+            //                var cmd = $"Insert into data_master_list_local (model_base, model_code, buyer_code, part_no_sync, part_qty, operation_name, image, working) " +
+            //                    $"Values ('{add_model_base}', '{add_model_code}', '{add_buyer_code}', '{add_partlist}', '1' ,'{add_operation_name}', '{null}', '1')";
+            //                if (ExecuteSqlTransaction(cmd, Local_Conn, "ADD"))
+            //                {
+            //                    MessageBox.Show(" เพิ่มข้อมูลสำเร็จ ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //                    textBoxbuyercode.Text = "";
+            //                    textBoxmodelcode.Text = "";
+            //                    textBoxpartlist.Text = "";
+            //                    textBoxoperationname.Text = "";
+            //                    textBoxmodelbase.Text = "";
+            //                    Create_table();
+            //                    ShowGrid_All();
+            //                }
+            //                else
+            //                {
+            //                    MessageBox.Show(" ไม่สามารถเพิ่มข้อมูลได้, กรุณาตรวจสอบอีกครั้ง", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception error)
+            //{
+            //    _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
+            //}
+            #endregion
         }
         #endregion
 
@@ -299,48 +543,43 @@ namespace SML___Pokayoke_System
                 var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    if (textBoxbuyercode.Text == "" || textBoxbuyercode.Text == null || textBoxmodelcode.Text == "" || textBoxmodelcode.Text == null || textBoxpartlist.Text == "" || textBoxpartlist.Text == null || textBoxoperationname.Text == "" || textBoxoperationname.Text == null || textBoxmodelbase.Text == "" || textBoxmodelbase.Text == null)
+                    var dt = new DataTable();
+                    using (var conn = new SqlConnection(Local_Conn))
                     {
-                        MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วนก่อนดำเนินการต่อ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        var check = conn.CreateCommand();
+                        check.CommandText = $"Select * From data_master_list_local where model_code Like '%" + textBoxmodelcode.Text + "%' and working = '1'";
+                        var sda = new SqlDataAdapter(check);
+                        sda.Fill(dt);
+                    }
+                    int count_check = dt.Rows.Count;
+                    if (count_check == 0)
+                    {
+                        MessageBox.Show("ไม่มีข้อมูลในระบบ ไม่สามารถแก้ไขข้อมูลได้ กรุณาตรวจสอบอีกครั้ง", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //textBoxbuyercode.Text = "";
+                        comboBoxbuyercode.Text = "";
+                        textBoxmodelcode.Text = "";
+                        textBoxpartlist.Text = "";
+                        textBoxoperationname.Text = "";
+                        textBoxmodelbase.Text = "";
+                        Create_table();
+                        ShowGrid_All();
                     }
                     else
                     {
-                        var dt = new DataTable();
-                        using (var conn = new SqlConnection(Local_Conn))
+                        var cmd = $"Update data_master_list_local " +
+                            $"Set part_no_sync = '{textBoxpartlist.Text}' " +
+                            $"Where model_code Like '%" + textBoxmodelcode.Text + "%'";
+                        if (ExecuteSqlTransaction(cmd, Local_Conn, "Update"))
                         {
-                            var check = conn.CreateCommand();
-                            check.CommandText = $"Select * From data_master_list_local where model_code Like '%" + textBoxmodelcode.Text + "%' and working = '1'";
-                            var sda = new SqlDataAdapter(check);
-                            sda.Fill(dt);
-                        }
-                        int count_check = dt.Rows.Count;
-                        if (count_check == 0)
-                        {
-                            MessageBox.Show("ไม่มีข้อมูลในระบบ ไม่สามารถแก้ไขข้อมูลได้ กรุณาตรวจสอบอีกครั้ง", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            textBoxbuyercode.Text = "";
+                            MessageBox.Show("บันทึกข้อมูลสำเร็จ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //textBoxbuyercode.Text = "";
+                            comboBoxbuyercode.Text = "";
                             textBoxmodelcode.Text = "";
                             textBoxpartlist.Text = "";
                             textBoxoperationname.Text = "";
                             textBoxmodelbase.Text = "";
                             Create_table();
                             ShowGrid_All();
-                        }
-                        else
-                        {
-                            var cmd = $"Update data_master_list_local " +
-                                $"Set part_no_sync = '{textBoxpartlist.Text}' " +
-                                $"Where model_code Like '%" + textBoxmodelcode.Text + "%'";
-                            if (ExecuteSqlTransaction(cmd, Local_Conn, "Update"))
-                            {
-                                MessageBox.Show("บันทึกข้อมูลสำเร็จ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                textBoxbuyercode.Text = "";
-                                textBoxmodelcode.Text = "";
-                                textBoxpartlist.Text = "";
-                                textBoxoperationname.Text = "";
-                                textBoxmodelbase.Text = "";
-                                Create_table();
-                                ShowGrid_All();
-                            }
                         }
                     }
                 }
@@ -349,6 +588,66 @@ namespace SML___Pokayoke_System
             {
                 _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
             }
+
+            #region "Hiden Code"
+            //try
+            //{
+            //    const string message = "คุณแน่ใจหรือไม่ ว่าต้องการอัปเดตข้อมูลนี้ไปยังฐานข้อมูล?";
+            //    const string caption = "Update Data Model to Database";
+            //    var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        if (textBoxbuyercode.Text == "" || textBoxbuyercode.Text == null || textBoxmodelcode.Text == "" || textBoxmodelcode.Text == null || textBoxpartlist.Text == "" || textBoxpartlist.Text == null || textBoxoperationname.Text == "" || textBoxoperationname.Text == null || textBoxmodelbase.Text == "" || textBoxmodelbase.Text == null)
+            //        {
+            //            MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วนก่อนดำเนินการต่อ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        }
+            //        else
+            //        {
+            //            var dt = new DataTable();
+            //            using (var conn = new SqlConnection(Local_Conn))
+            //            {
+            //                var check = conn.CreateCommand();
+            //                check.CommandText = $"Select * From data_master_list_local where model_code Like '%" + textBoxmodelcode.Text + "%' and working = '1'";
+            //                var sda = new SqlDataAdapter(check);
+            //                sda.Fill(dt);
+            //            }
+            //            int count_check = dt.Rows.Count;
+            //            if (count_check == 0)
+            //            {
+            //                MessageBox.Show("ไม่มีข้อมูลในระบบ ไม่สามารถแก้ไขข้อมูลได้ กรุณาตรวจสอบอีกครั้ง", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //                textBoxbuyercode.Text = "";
+            //                textBoxmodelcode.Text = "";
+            //                textBoxpartlist.Text = "";
+            //                textBoxoperationname.Text = "";
+            //                textBoxmodelbase.Text = "";
+            //                Create_table();
+            //                ShowGrid_All();
+            //            }
+            //            else
+            //            {
+            //                var cmd = $"Update data_master_list_local " +
+            //                    $"Set part_no_sync = '{textBoxpartlist.Text}' " +
+            //                    $"Where model_code Like '%" + textBoxmodelcode.Text + "%'";
+            //                if (ExecuteSqlTransaction(cmd, Local_Conn, "Update"))
+            //                {
+            //                    MessageBox.Show("บันทึกข้อมูลสำเร็จ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //                    textBoxbuyercode.Text = "";
+            //                    textBoxmodelcode.Text = "";
+            //                    textBoxpartlist.Text = "";
+            //                    textBoxoperationname.Text = "";
+            //                    textBoxmodelbase.Text = "";
+            //                    Create_table();
+            //                    ShowGrid_All();
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception error)
+            //{
+            //    _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
+            //}
+            #endregion
         }
         #endregion
 
@@ -357,11 +656,15 @@ namespace SML___Pokayoke_System
         {
             try
             {
-                textBoxbuyercode.Text = "";
+                //textBoxbuyercode.Text = "";
                 textBoxmodelcode.Text = "";
                 textBoxpartlist.Text = "";
                 textBoxoperationname.Text = "";
                 textBoxmodelbase.Text = "";
+                textBoxsearchmodelbase.Text = "Search";
+                textBoxsearchmodelcode.Text = "Search";
+                comboBoxbuyercode.Text = "";
+                combobox_item();
                 Create_table();
                 ShowGrid_All();
             }
@@ -382,26 +685,26 @@ namespace SML___Pokayoke_System
                 var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    if (textBoxmodelcode.Text == "" || textBoxmodelcode.Text == null || textBoxmodelbase.Text == "" || textBoxmodelbase.Text == null || textBoxbuyercode.Text == "" || textBoxbuyercode.Text == null || textBoxoperationname.Text == "" || textBoxoperationname.Text == null || textBoxpartlist.Text == "" || textBoxpartlist.Text == null)
-                    {
-                        MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วนก่อนดำเนินการต่อ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        var cmd = $"Update data_master_list_local " +
+                    string update_model = textBoxmodelcode.Text;
+                    //string update_buyer = textBoxbuyercode.Text;
+                    string update_buyer = comboBoxbuyercode.Text;
+                    string update_part = textBoxpartlist.Text;
+                    string update_operationname = textBoxoperationname.Text;
+                    var cmd = $"Update data_master_list_local " +
                             $"Set working = '0' " +
-                            $"Where model_code = '{textBoxmodelcode.Text}' and buyer_code = '{textBoxbuyercode}'";
-                        if (ExecuteSqlTransaction(cmd, Local_Conn, "Delete"))
-                        {
-                            MessageBox.Show("ลบข้อมูลสำเร็จ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            textBoxbuyercode.Text = "";
-                            textBoxmodelcode.Text = "";
-                            textBoxpartlist.Text = "";
-                            textBoxoperationname.Text = "";
-                            textBoxmodelbase.Text = "";
-                            Create_table();
-                            ShowGrid_All();
-                        }
+                            $"Where model_code = '{textBoxmodelcode.Text}' and buyer_code = '{comboBoxbuyercode.Text}' and part_no_sync = '{textBoxpartlist.Text}' and operation_name = '{textBoxoperationname.Text}'";
+                    if (ExecuteSqlTransaction(cmd, Local_Conn, "Delete"))
+                    {
+                        MessageBox.Show("ลบข้อมูลสำเร็จ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //textBoxbuyercode.Text = "";
+                        textBoxmodelcode.Text = "";
+                        textBoxpartlist.Text = "";
+                        textBoxoperationname.Text = "";
+                        textBoxmodelbase.Text = "";
+                        comboBoxbuyercode.Text = "";
+                        combobox_item();
+                        Create_table();
+                        ShowGrid_All();
                     }
                 }
             }
@@ -409,8 +712,66 @@ namespace SML___Pokayoke_System
             {
                 _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
             }
+
+
+
+            //try
+            //{
+            //    const string message = "คุณแน่ใจหรือไม่ ว่าต้องการลบข้อมูลนี้ในฐานข้อมูล?";
+            //    const string caption = "Delete model from database";
+            //    var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        if (textBoxmodelcode.Text == "" || textBoxmodelcode.Text == null || textBoxmodelbase.Text == "" || textBoxmodelbase.Text == null || textBoxbuyercode.Text == "" || textBoxbuyercode.Text == null || textBoxoperationname.Text == "" || textBoxoperationname.Text == null || textBoxpartlist.Text == "" || textBoxpartlist.Text == null)
+            //        {
+            //            MessageBox.Show("กรุณากรอกข้อมูลให้ครบถ้วนก่อนดำเนินการต่อ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        }
+            //        else
+            //        {
+            //            var cmd = $"Update data_master_list_local " +
+            //                $"Set working = '0' " +
+            //                $"Where model_code = '{textBoxmodelcode.Text}' and buyer_code = '{textBoxbuyercode}'";
+            //            if (ExecuteSqlTransaction(cmd, Local_Conn, "Delete"))
+            //            {
+            //                MessageBox.Show("ลบข้อมูลสำเร็จ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //                textBoxbuyercode.Text = "";
+            //                textBoxmodelcode.Text = "";
+            //                textBoxpartlist.Text = "";
+            //                textBoxoperationname.Text = "";
+            //                textBoxmodelbase.Text = "";
+            //                Create_table();
+            //                ShowGrid_All();
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception error)
+            //{
+            //    _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
+            //}
         }
+
         #endregion
 
+        #region "Grid Cell mouse up"
+        private void metroGridmodel_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                textBoxmodelbase.Text = metroGridmodel.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textBoxmodelcode.Text = metroGridmodel.Rows[e.RowIndex].Cells[1].Value.ToString();
+                //textBoxbuyercode.Text = metroGridmodel.Rows[e.RowIndex].Cells[2].Value.ToString();
+                comboBoxbuyercode.Text = metroGridmodel.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textBoxpartlist.Text = metroGridmodel.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textBoxoperationname.Text = metroGridmodel.Rows[e.RowIndex].Cells[4].Value.ToString();
+            }
+            catch (Exception error)
+            {
+                _ = new LogWriter.LogWriter($" Error Message: {0}, {error.Message}");
+            }
+        }
+
+
+        #endregion
     }
 }

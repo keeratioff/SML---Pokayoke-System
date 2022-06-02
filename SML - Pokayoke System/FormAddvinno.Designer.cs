@@ -29,17 +29,22 @@ namespace SML___Pokayoke_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.Buttonsave = new SML___Pokayoke_System.RJ_Button.RJButton();
-            this.Buttonclear = new SML___Pokayoke_System.RJ_Button.RJButton();
             this.comboBoxsheet = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxfilename = new System.Windows.Forms.TextBox();
             this.buttonbrowse1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Buttonsave = new SML___Pokayoke_System.RJ_Button.RJButton();
+            this.Buttonclear = new SML___Pokayoke_System.RJ_Button.RJButton();
+            this.buttoncleardatabase = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,43 +56,128 @@ namespace SML___Pokayoke_System
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle5;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid1.Location = new System.Drawing.Point(12, 198);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.metroGrid1.RowHeadersVisible = false;
             this.metroGrid1.RowHeadersWidth = 10;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(1232, 489);
+            this.metroGrid1.Size = new System.Drawing.Size(1232, 478);
             this.metroGrid1.TabIndex = 47;
+            // 
+            // comboBoxsheet
+            // 
+            this.comboBoxsheet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.comboBoxsheet.FormattingEnabled = true;
+            this.comboBoxsheet.Location = new System.Drawing.Point(186, 103);
+            this.comboBoxsheet.Name = "comboBoxsheet";
+            this.comboBoxsheet.Size = new System.Drawing.Size(207, 32);
+            this.comboBoxsheet.TabIndex = 43;
+            this.comboBoxsheet.SelectedIndexChanged += new System.EventHandler(this.comboBoxsheet_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(98, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 24);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Sheet : ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(56, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(124, 24);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "File Name : ";
+            // 
+            // textBoxfilename
+            // 
+            this.textBoxfilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBoxfilename.Location = new System.Drawing.Point(186, 67);
+            this.textBoxfilename.Multiline = true;
+            this.textBoxfilename.Name = "textBoxfilename";
+            this.textBoxfilename.Size = new System.Drawing.Size(487, 30);
+            this.textBoxfilename.TabIndex = 40;
+            // 
+            // buttonbrowse1
+            // 
+            this.buttonbrowse1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.buttonbrowse1.Location = new System.Drawing.Point(679, 65);
+            this.buttonbrowse1.Name = "buttonbrowse1";
+            this.buttonbrowse1.Size = new System.Drawing.Size(109, 32);
+            this.buttonbrowse1.TabIndex = 49;
+            this.buttonbrowse1.Text = "Browse a file";
+            this.buttonbrowse1.UseVisualStyleBackColor = true;
+            this.buttonbrowse1.Click += new System.EventHandler(this.buttonbrowse1_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label9.Location = new System.Drawing.Point(30, 33);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(361, 13);
+            this.label9.TabIndex = 61;
+            this.label9.Text = "___________________________________________________________";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(28, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(189, 24);
+            this.label10.TabIndex = 60;
+            this.label10.Text = "Setting Vin number";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(223, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(174, 13);
+            this.label2.TabIndex = 62;
+            this.label2.Text = "Add vin number for import excel file.";
             // 
             // Buttonsave
             // 
@@ -129,58 +219,27 @@ namespace SML___Pokayoke_System
             this.Buttonclear.UseVisualStyleBackColor = false;
             this.Buttonclear.Click += new System.EventHandler(this.Buttonclear_Click);
             // 
-            // comboBoxsheet
+            // buttoncleardatabase
             // 
-            this.comboBoxsheet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.comboBoxsheet.FormattingEnabled = true;
-            this.comboBoxsheet.Location = new System.Drawing.Point(276, 98);
-            this.comboBoxsheet.Name = "comboBoxsheet";
-            this.comboBoxsheet.Size = new System.Drawing.Size(300, 32);
-            this.comboBoxsheet.TabIndex = 43;
-            this.comboBoxsheet.SelectedIndexChanged += new System.EventHandler(this.comboBoxsheet_SelectedIndexChanged);
+            this.buttoncleardatabase.BackColor = System.Drawing.Color.Red;
+            this.buttoncleardatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttoncleardatabase.ForeColor = System.Drawing.Color.White;
+            this.buttoncleardatabase.Location = new System.Drawing.Point(1124, 682);
+            this.buttoncleardatabase.Name = "buttoncleardatabase";
+            this.buttoncleardatabase.Size = new System.Drawing.Size(120, 23);
+            this.buttoncleardatabase.TabIndex = 76;
+            this.buttoncleardatabase.Text = "Clear Database is all";
+            this.buttoncleardatabase.UseVisualStyleBackColor = false;
+            this.buttoncleardatabase.Click += new System.EventHandler(this.buttoncleardatabase_Click);
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(188, 101);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 24);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Sheet : ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(146, 52);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(124, 24);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "File Name : ";
-            // 
-            // textBoxfilename
-            // 
-            this.textBoxfilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBoxfilename.Location = new System.Drawing.Point(276, 49);
-            this.textBoxfilename.Multiline = true;
-            this.textBoxfilename.Name = "textBoxfilename";
-            this.textBoxfilename.Size = new System.Drawing.Size(300, 30);
-            this.textBoxfilename.TabIndex = 40;
-            // 
-            // buttonbrowse1
-            // 
-            this.buttonbrowse1.Location = new System.Drawing.Point(582, 48);
-            this.buttonbrowse1.Name = "buttonbrowse1";
-            this.buttonbrowse1.Size = new System.Drawing.Size(109, 32);
-            this.buttonbrowse1.TabIndex = 49;
-            this.buttonbrowse1.Text = "Browse a file";
-            this.buttonbrowse1.UseVisualStyleBackColor = true;
-            this.buttonbrowse1.Click += new System.EventHandler(this.buttonbrowse1_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(755, 692);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(363, 13);
+            this.label3.TabIndex = 77;
+            this.label3.Text = "หมายเหตุ : ลบข้อมูลส่วนของ Part list ทั้งหมด กรณีมีการแก้ไขข้อมูลจำนวนมาก";
             // 
             // FormAddvinno
             // 
@@ -188,6 +247,11 @@ namespace SML___Pokayoke_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1256, 709);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.buttoncleardatabase);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.buttonbrowse1);
             this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.Buttonsave);
@@ -216,5 +280,10 @@ namespace SML___Pokayoke_System
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxfilename;
         private System.Windows.Forms.Button buttonbrowse1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttoncleardatabase;
+        private System.Windows.Forms.Label label3;
     }
 }

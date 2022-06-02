@@ -46,11 +46,12 @@ namespace SML___Pokayoke_System
             this.radioButtonadmin = new System.Windows.Forms.RadioButton();
             this.radioButtonuser = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.Buttonadd = new SML___Pokayoke_System.RJ_Button.RJButton();
             this.Buttonclear = new SML___Pokayoke_System.RJ_Button.RJButton();
             this.Buttondelete = new SML___Pokayoke_System.RJ_Button.RJButton();
             this.Buttonupdate = new SML___Pokayoke_System.RJ_Button.RJButton();
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@ namespace SML___Pokayoke_System
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label9.Location = new System.Drawing.Point(29, 51);
+            this.label9.Location = new System.Drawing.Point(29, 33);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(361, 13);
             this.label9.TabIndex = 61;
@@ -71,7 +72,7 @@ namespace SML___Pokayoke_System
             this.label10.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(28, 27);
+            this.label10.Location = new System.Drawing.Point(28, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(195, 24);
             this.label10.TabIndex = 60;
@@ -83,7 +84,7 @@ namespace SML___Pokayoke_System
             this.label3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(44, 155);
+            this.label3.Location = new System.Drawing.Point(44, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 24);
             this.label3.TabIndex = 64;
@@ -92,7 +93,7 @@ namespace SML___Pokayoke_System
             // textBoxfirstname
             // 
             this.textBoxfirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.textBoxfirstname.Location = new System.Drawing.Point(178, 151);
+            this.textBoxfirstname.Location = new System.Drawing.Point(178, 134);
             this.textBoxfirstname.Multiline = true;
             this.textBoxfirstname.Name = "textBoxfirstname";
             this.textBoxfirstname.Size = new System.Drawing.Size(350, 30);
@@ -101,7 +102,7 @@ namespace SML___Pokayoke_System
             // textBoxlastname
             // 
             this.textBoxlastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.textBoxlastname.Location = new System.Drawing.Point(178, 187);
+            this.textBoxlastname.Location = new System.Drawing.Point(178, 170);
             this.textBoxlastname.Multiline = true;
             this.textBoxlastname.Name = "textBoxlastname";
             this.textBoxlastname.Size = new System.Drawing.Size(350, 30);
@@ -113,7 +114,7 @@ namespace SML___Pokayoke_System
             this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(44, 191);
+            this.label1.Location = new System.Drawing.Point(44, 174);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 24);
             this.label1.TabIndex = 67;
@@ -122,7 +123,7 @@ namespace SML___Pokayoke_System
             // textBoxusername
             // 
             this.textBoxusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.textBoxusername.Location = new System.Drawing.Point(178, 79);
+            this.textBoxusername.Location = new System.Drawing.Point(178, 62);
             this.textBoxusername.Multiline = true;
             this.textBoxusername.Name = "textBoxusername";
             this.textBoxusername.Size = new System.Drawing.Size(350, 30);
@@ -131,7 +132,7 @@ namespace SML___Pokayoke_System
             // textBoxpassword
             // 
             this.textBoxpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.textBoxpassword.Location = new System.Drawing.Point(178, 115);
+            this.textBoxpassword.Location = new System.Drawing.Point(178, 98);
             this.textBoxpassword.Multiline = true;
             this.textBoxpassword.Name = "textBoxpassword";
             this.textBoxpassword.Size = new System.Drawing.Size(350, 30);
@@ -143,7 +144,7 @@ namespace SML___Pokayoke_System
             this.label2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(44, 82);
+            this.label2.Location = new System.Drawing.Point(44, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 24);
             this.label2.TabIndex = 71;
@@ -155,7 +156,7 @@ namespace SML___Pokayoke_System
             this.label4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(44, 119);
+            this.label4.Location = new System.Drawing.Point(44, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 24);
             this.label4.TabIndex = 72;
@@ -167,7 +168,7 @@ namespace SML___Pokayoke_System
             this.label5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(44, 226);
+            this.label5.Location = new System.Drawing.Point(44, 209);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 24);
             this.label5.TabIndex = 73;
@@ -177,7 +178,7 @@ namespace SML___Pokayoke_System
             // 
             this.radioButtonadmin.AutoSize = true;
             this.radioButtonadmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonadmin.Location = new System.Drawing.Point(178, 229);
+            this.radioButtonadmin.Location = new System.Drawing.Point(178, 212);
             this.radioButtonadmin.Name = "radioButtonadmin";
             this.radioButtonadmin.Size = new System.Drawing.Size(113, 24);
             this.radioButtonadmin.TabIndex = 74;
@@ -190,7 +191,7 @@ namespace SML___Pokayoke_System
             // 
             this.radioButtonuser.AutoSize = true;
             this.radioButtonuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonuser.Location = new System.Drawing.Point(306, 229);
+            this.radioButtonuser.Location = new System.Drawing.Point(306, 212);
             this.radioButtonuser.Name = "radioButtonuser";
             this.radioButtonuser.Size = new System.Drawing.Size(102, 24);
             this.radioButtonuser.TabIndex = 74;
@@ -205,89 +206,9 @@ namespace SML___Pokayoke_System
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(14, 262);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1228, 377);
+            this.groupBox1.Size = new System.Drawing.Size(1228, 435);
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
-            // 
-            // Buttonadd
-            // 
-            this.Buttonadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
-            this.Buttonadd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
-            this.Buttonadd.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.Buttonadd.BorderRadius = 40;
-            this.Buttonadd.BorderSize = 0;
-            this.Buttonadd.FlatAppearance.BorderSize = 0;
-            this.Buttonadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buttonadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.Buttonadd.ForeColor = System.Drawing.Color.White;
-            this.Buttonadd.Location = new System.Drawing.Point(767, 52);
-            this.Buttonadd.Name = "Buttonadd";
-            this.Buttonadd.Size = new System.Drawing.Size(200, 99);
-            this.Buttonadd.TabIndex = 80;
-            this.Buttonadd.Text = "Add";
-            this.Buttonadd.TextColor = System.Drawing.Color.White;
-            this.Buttonadd.UseVisualStyleBackColor = false;
-            this.Buttonadd.Click += new System.EventHandler(this.Buttonadd_Click);
-            // 
-            // Buttonclear
-            // 
-            this.Buttonclear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
-            this.Buttonclear.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
-            this.Buttonclear.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.Buttonclear.BorderRadius = 40;
-            this.Buttonclear.BorderSize = 0;
-            this.Buttonclear.FlatAppearance.BorderSize = 0;
-            this.Buttonclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buttonclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.Buttonclear.ForeColor = System.Drawing.Color.White;
-            this.Buttonclear.Location = new System.Drawing.Point(767, 157);
-            this.Buttonclear.Name = "Buttonclear";
-            this.Buttonclear.Size = new System.Drawing.Size(200, 99);
-            this.Buttonclear.TabIndex = 81;
-            this.Buttonclear.Text = "Clear";
-            this.Buttonclear.TextColor = System.Drawing.Color.White;
-            this.Buttonclear.UseVisualStyleBackColor = false;
-            this.Buttonclear.Click += new System.EventHandler(this.Buttonclear_Click);
-            // 
-            // Buttondelete
-            // 
-            this.Buttondelete.BackColor = System.Drawing.Color.Firebrick;
-            this.Buttondelete.BackgroundColor = System.Drawing.Color.Firebrick;
-            this.Buttondelete.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.Buttondelete.BorderRadius = 40;
-            this.Buttondelete.BorderSize = 0;
-            this.Buttondelete.FlatAppearance.BorderSize = 0;
-            this.Buttondelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buttondelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.Buttondelete.ForeColor = System.Drawing.Color.White;
-            this.Buttondelete.Location = new System.Drawing.Point(973, 157);
-            this.Buttondelete.Name = "Buttondelete";
-            this.Buttondelete.Size = new System.Drawing.Size(200, 99);
-            this.Buttondelete.TabIndex = 82;
-            this.Buttondelete.Text = "Delete";
-            this.Buttondelete.TextColor = System.Drawing.Color.White;
-            this.Buttondelete.UseVisualStyleBackColor = false;
-            this.Buttondelete.Click += new System.EventHandler(this.Buttondelete_Click);
-            // 
-            // Buttonupdate
-            // 
-            this.Buttonupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
-            this.Buttonupdate.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
-            this.Buttonupdate.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.Buttonupdate.BorderRadius = 40;
-            this.Buttonupdate.BorderSize = 0;
-            this.Buttonupdate.FlatAppearance.BorderSize = 0;
-            this.Buttonupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buttonupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.Buttonupdate.ForeColor = System.Drawing.Color.White;
-            this.Buttonupdate.Location = new System.Drawing.Point(973, 52);
-            this.Buttonupdate.Name = "Buttonupdate";
-            this.Buttonupdate.Size = new System.Drawing.Size(200, 99);
-            this.Buttonupdate.TabIndex = 83;
-            this.Buttonupdate.Text = "Update";
-            this.Buttonupdate.TextColor = System.Drawing.Color.White;
-            this.Buttonupdate.UseVisualStyleBackColor = false;
-            this.Buttonupdate.Click += new System.EventHandler(this.Buttonupdate_Click);
             // 
             // metroGrid1
             // 
@@ -332,16 +253,106 @@ namespace SML___Pokayoke_System
             this.metroGrid1.RowHeadersWidth = 10;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(1216, 354);
+            this.metroGrid1.Size = new System.Drawing.Size(1216, 412);
             this.metroGrid1.TabIndex = 50;
             this.metroGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellClick);
+            // 
+            // Buttonadd
+            // 
+            this.Buttonadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.Buttonadd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.Buttonadd.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Buttonadd.BorderRadius = 40;
+            this.Buttonadd.BorderSize = 0;
+            this.Buttonadd.FlatAppearance.BorderSize = 0;
+            this.Buttonadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buttonadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.Buttonadd.ForeColor = System.Drawing.Color.White;
+            this.Buttonadd.Location = new System.Drawing.Point(865, 50);
+            this.Buttonadd.Name = "Buttonadd";
+            this.Buttonadd.Size = new System.Drawing.Size(150, 100);
+            this.Buttonadd.TabIndex = 80;
+            this.Buttonadd.Text = "Add";
+            this.Buttonadd.TextColor = System.Drawing.Color.White;
+            this.Buttonadd.UseVisualStyleBackColor = false;
+            this.Buttonadd.Click += new System.EventHandler(this.Buttonadd_Click);
+            // 
+            // Buttonclear
+            // 
+            this.Buttonclear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.Buttonclear.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.Buttonclear.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Buttonclear.BorderRadius = 40;
+            this.Buttonclear.BorderSize = 0;
+            this.Buttonclear.FlatAppearance.BorderSize = 0;
+            this.Buttonclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buttonclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.Buttonclear.ForeColor = System.Drawing.Color.White;
+            this.Buttonclear.Location = new System.Drawing.Point(1021, 51);
+            this.Buttonclear.Name = "Buttonclear";
+            this.Buttonclear.Size = new System.Drawing.Size(150, 100);
+            this.Buttonclear.TabIndex = 81;
+            this.Buttonclear.Text = "Clear";
+            this.Buttonclear.TextColor = System.Drawing.Color.White;
+            this.Buttonclear.UseVisualStyleBackColor = false;
+            this.Buttonclear.Click += new System.EventHandler(this.Buttonclear_Click);
+            // 
+            // Buttondelete
+            // 
+            this.Buttondelete.BackColor = System.Drawing.Color.Firebrick;
+            this.Buttondelete.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.Buttondelete.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Buttondelete.BorderRadius = 40;
+            this.Buttondelete.BorderSize = 0;
+            this.Buttondelete.FlatAppearance.BorderSize = 0;
+            this.Buttondelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buttondelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.Buttondelete.ForeColor = System.Drawing.Color.White;
+            this.Buttondelete.Location = new System.Drawing.Point(1021, 157);
+            this.Buttondelete.Name = "Buttondelete";
+            this.Buttondelete.Size = new System.Drawing.Size(150, 100);
+            this.Buttondelete.TabIndex = 82;
+            this.Buttondelete.Text = "Delete";
+            this.Buttondelete.TextColor = System.Drawing.Color.White;
+            this.Buttondelete.UseVisualStyleBackColor = false;
+            this.Buttondelete.Click += new System.EventHandler(this.Buttondelete_Click);
+            // 
+            // Buttonupdate
+            // 
+            this.Buttonupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.Buttonupdate.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.Buttonupdate.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Buttonupdate.BorderRadius = 40;
+            this.Buttonupdate.BorderSize = 0;
+            this.Buttonupdate.FlatAppearance.BorderSize = 0;
+            this.Buttonupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buttonupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.Buttonupdate.ForeColor = System.Drawing.Color.White;
+            this.Buttonupdate.Location = new System.Drawing.Point(865, 156);
+            this.Buttonupdate.Name = "Buttonupdate";
+            this.Buttonupdate.Size = new System.Drawing.Size(150, 100);
+            this.Buttonupdate.TabIndex = 83;
+            this.Buttonupdate.Text = "Update";
+            this.Buttonupdate.TextColor = System.Drawing.Color.White;
+            this.Buttonupdate.UseVisualStyleBackColor = false;
+            this.Buttonupdate.Click += new System.EventHandler(this.Buttonupdate_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(229, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 13);
+            this.label6.TabIndex = 84;
+            this.label6.Text = "Add or update for user.";
             // 
             // FormSettingAccessibility
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1256, 651);
+            this.ClientSize = new System.Drawing.Size(1256, 709);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.Buttonupdate);
             this.Controls.Add(this.Buttondelete);
             this.Controls.Add(this.Buttonclear);
@@ -392,5 +403,6 @@ namespace SML___Pokayoke_System
         private RJ_Button.RJButton Buttondelete;
         private RJ_Button.RJButton Buttonupdate;
         private MetroFramework.Controls.MetroGrid metroGrid1;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -141,7 +141,7 @@ namespace SML___Pokayoke_System
                 using (var conn = new SqlConnection(Local_Conn))
                 {
                     var check = conn.CreateCommand();
-                    check.CommandText = "select * from user_local";
+                    check.CommandText = "select * from user_local where working = '1'";
                     var sda = new SqlDataAdapter(check);
                     sda.Fill(dt);
                 }
@@ -202,7 +202,7 @@ namespace SML___Pokayoke_System
                         int count_rows = dt.Rows.Count;
                         if (count_rows >= 1)
                         {
-                            MessageBox.Show("พบ ID พนักงานเหมืยนกันกับในฐานข้อมูล โปรดอัปเดตหรือใช้ ID ใหม่เพื่อเพิ่ม", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("พบ ID พนักงานเหมือนกันกับในฐานข้อมูล โปรดอัปเดตหรือใช้ ID ใหม่เพื่อเพิ่ม", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             textBoxfirstname.Text = "";
                             textBoxlastname.Text = "";
                             textBoxusername.Text = "";
@@ -248,7 +248,7 @@ namespace SML___Pokayoke_System
         {
             try
             {
-                const string message = "คุณแน่ใจหรือไม่ ว่าต้องการเพิ่มโมเดลนี้ในฐานข้อมูล?";
+                const string message = "คุณแน่ใจหรือไม่ ว่าต้องการอัพเดตโมเดลนี้ในฐานข้อมูล?";
                 const string caption = "Add Model to Database";
                 var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
@@ -264,7 +264,7 @@ namespace SML___Pokayoke_System
                         string add_username = textBoxusername.Text;
                         string add_password = textBoxpassword.Text;
                         var cmd = $"Update user_local " +
-                            $"Set password = '{add_password}', name = '{add_firstname}', surname = '{add_lastname}', level = '{Permission}', time_update = 'Getdate()'" +
+                            $"Set password = '{add_password}', name = '{add_firstname}', surname = '{add_lastname}', level = '{Permission}', time_update = Getdate()" +
                             $"Where employee_id = '{textBoxusername.Text}'";
                         if (ExecuteSqlTransaction(cmd, Local_Conn, "Update"))
                         {

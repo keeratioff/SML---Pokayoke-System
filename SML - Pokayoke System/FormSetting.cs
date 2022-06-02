@@ -50,36 +50,36 @@ namespace SML___Pokayoke_System
         private void Buttonaccessibility_Click(object sender, EventArgs e)
         {
             Buttonaccessibility.BackColor = Color.Blue;
-            //Buttonvinnumber.BackColor = Color.FromArgb(2, 48, 71);
-            //Buttonmodelcode.BackColor = Color.FromArgb(2, 48, 71);
-            //Buttonpartnumber.BackColor = Color.FromArgb(2, 48, 71);
+            Buttonvinnumber_im.BackColor = Color.FromArgb(2, 48, 71);
+            Buttonmodelcode.BackColor = Color.FromArgb(2, 48, 71);
+            Buttonpartnumber_im.BackColor = Color.FromArgb(2, 48, 71);
             OpenChildForm(new FormSettingAccessibility());
         }
 
         private void Buttonvinnumber_Click(object sender, EventArgs e)
         {
-            //Buttonaccessibility.BackColor = Color.FromArgb(2, 48, 71);
-            //Buttonvinnumber.BackColor = Color.Blue;
-            //Buttonmodelcode.BackColor = Color.FromArgb(2, 48, 71);
-            //Buttonpartnumber.BackColor = Color.FromArgb(2, 48, 71);
+            Buttonaccessibility.BackColor = Color.FromArgb(2, 48, 71);
+            Buttonvinnumber_im.BackColor = Color.Blue;
+            Buttonmodelcode.BackColor = Color.FromArgb(2, 48, 71);
+            Buttonpartnumber_im.BackColor = Color.FromArgb(2, 48, 71);
             OpenChildForm(new FormAddvinno());
         }
 
         private void Buttonmodelcode_Click(object sender, EventArgs e)
         {
-            //Buttonaccessibility.BackColor = Color.FromArgb(2, 48, 71);
-            //Buttonvinnumber.BackColor = Color.FromArgb(2, 48, 71);
-            //Buttonmodelcode.BackColor = Color.Blue;
-            //Buttonpartnumber.BackColor = Color.FromArgb(2, 48, 71);
-            OpenChildForm(new FormSettingModel());
+            Buttonaccessibility.BackColor = Color.FromArgb(2, 48, 71);
+            Buttonvinnumber_im.BackColor = Color.FromArgb(2, 48, 71);
+            Buttonmodelcode.BackColor = Color.Blue;
+            Buttonpartnumber_im.BackColor = Color.FromArgb(2, 48, 71);
+            OpenChildForm(new FormAddpastlists());
         }
 
         private void Buttonpartnumber_Click(object sender, EventArgs e)
         {
-            //Buttonaccessibility.BackColor = Color.FromArgb(2, 48, 71);
-            //Buttonvinnumber.BackColor = Color.FromArgb(2, 48, 71);
-            //Buttonmodelcode.BackColor = Color.FromArgb(2, 48, 71);
-            //Buttonpartnumber.BackColor = Color.Blue;
+            Buttonaccessibility.BackColor = Color.FromArgb(2, 48, 71);
+            Buttonvinnumber_im.BackColor = Color.FromArgb(2, 48, 71);
+            Buttonmodelcode.BackColor = Color.FromArgb(2, 48, 71);
+            Buttonpartnumber_im.BackColor = Color.Blue;
             OpenChildForm(new FormSettingPartNumber());
         }
     }

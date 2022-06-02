@@ -41,6 +41,9 @@ namespace SML___Pokayoke_System
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Buttonaddstock = new SML___Pokayoke_System.RJ_Button.RJButton();
+            this.Buttonpartnumber_im = new SML___Pokayoke_System.RJ_Button.RJButton();
+            this.Buttonaccessibility = new SML___Pokayoke_System.RJ_Button.RJButton();
             this.Buttonreport = new SML___Pokayoke_System.RJ_Button.RJButton();
             this.ButtonAddpartlists = new SML___Pokayoke_System.RJ_Button.RJButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -48,6 +51,11 @@ namespace SML___Pokayoke_System
             this.Buttonlogout = new SML___Pokayoke_System.RJ_Button.RJButton();
             this.ButtonAddvinno = new SML___Pokayoke_System.RJ_Button.RJButton();
             this.Buttonsetting = new SML___Pokayoke_System.RJ_Button.RJButton();
+            this.rjButton1 = new SML___Pokayoke_System.RJ_Button.RJButton();
+            this.rjButton5 = new SML___Pokayoke_System.RJ_Button.RJButton();
+            this.rjButton4 = new SML___Pokayoke_System.RJ_Button.RJButton();
+            this.rjButton3 = new SML___Pokayoke_System.RJ_Button.RJButton();
+            this.rjButton2 = new SML___Pokayoke_System.RJ_Button.RJButton();
             this.labelsubject = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
@@ -166,6 +174,9 @@ namespace SML___Pokayoke_System
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.Controls.Add(this.Buttonaddstock);
+            this.panel1.Controls.Add(this.Buttonpartnumber_im);
+            this.panel1.Controls.Add(this.Buttonaccessibility);
             this.panel1.Controls.Add(this.Buttonreport);
             this.panel1.Controls.Add(this.ButtonAddpartlists);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -173,10 +184,79 @@ namespace SML___Pokayoke_System
             this.panel1.Controls.Add(this.Buttonlogout);
             this.panel1.Controls.Add(this.ButtonAddvinno);
             this.panel1.Controls.Add(this.Buttonsetting);
+            this.panel1.Controls.Add(this.rjButton1);
+            this.panel1.Controls.Add(this.rjButton5);
+            this.panel1.Controls.Add(this.rjButton4);
+            this.panel1.Controls.Add(this.rjButton3);
+            this.panel1.Controls.Add(this.rjButton2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(338, 899);
             this.panel1.TabIndex = 3;
+            // 
+            // Buttonaddstock
+            // 
+            this.Buttonaddstock.BackColor = System.Drawing.Color.Snow;
+            this.Buttonaddstock.BackgroundColor = System.Drawing.Color.Snow;
+            this.Buttonaddstock.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Buttonaddstock.BorderRadius = 40;
+            this.Buttonaddstock.BorderSize = 0;
+            this.Buttonaddstock.FlatAppearance.BorderSize = 0;
+            this.Buttonaddstock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buttonaddstock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Buttonaddstock.ForeColor = System.Drawing.Color.Black;
+            this.Buttonaddstock.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.Buttonaddstock.Location = new System.Drawing.Point(24, 603);
+            this.Buttonaddstock.Name = "Buttonaddstock";
+            this.Buttonaddstock.Size = new System.Drawing.Size(300, 40);
+            this.Buttonaddstock.TabIndex = 10;
+            this.Buttonaddstock.Text = "  ๐ Add Stock";
+            this.Buttonaddstock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buttonaddstock.TextColor = System.Drawing.Color.Black;
+            this.Buttonaddstock.UseVisualStyleBackColor = false;
+            this.Buttonaddstock.Click += new System.EventHandler(this.Buttonaddstock_Click);
+            // 
+            // Buttonpartnumber_im
+            // 
+            this.Buttonpartnumber_im.BackColor = System.Drawing.Color.Snow;
+            this.Buttonpartnumber_im.BackgroundColor = System.Drawing.Color.Snow;
+            this.Buttonpartnumber_im.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Buttonpartnumber_im.BorderRadius = 40;
+            this.Buttonpartnumber_im.BorderSize = 0;
+            this.Buttonpartnumber_im.FlatAppearance.BorderSize = 0;
+            this.Buttonpartnumber_im.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buttonpartnumber_im.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Buttonpartnumber_im.ForeColor = System.Drawing.Color.Black;
+            this.Buttonpartnumber_im.Location = new System.Drawing.Point(24, 695);
+            this.Buttonpartnumber_im.Name = "Buttonpartnumber_im";
+            this.Buttonpartnumber_im.Size = new System.Drawing.Size(300, 40);
+            this.Buttonpartnumber_im.TabIndex = 7;
+            this.Buttonpartnumber_im.Text = "  ๐ Import - Part Number";
+            this.Buttonpartnumber_im.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buttonpartnumber_im.TextColor = System.Drawing.Color.Black;
+            this.Buttonpartnumber_im.UseVisualStyleBackColor = false;
+            this.Buttonpartnumber_im.Click += new System.EventHandler(this.Buttonpartnumber_im_Click_1);
+            // 
+            // Buttonaccessibility
+            // 
+            this.Buttonaccessibility.BackColor = System.Drawing.Color.Snow;
+            this.Buttonaccessibility.BackgroundColor = System.Drawing.Color.Snow;
+            this.Buttonaccessibility.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Buttonaccessibility.BorderRadius = 40;
+            this.Buttonaccessibility.BorderSize = 0;
+            this.Buttonaccessibility.FlatAppearance.BorderSize = 0;
+            this.Buttonaccessibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buttonaccessibility.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Buttonaccessibility.ForeColor = System.Drawing.Color.Black;
+            this.Buttonaccessibility.Location = new System.Drawing.Point(24, 511);
+            this.Buttonaccessibility.Name = "Buttonaccessibility";
+            this.Buttonaccessibility.Size = new System.Drawing.Size(300, 40);
+            this.Buttonaccessibility.TabIndex = 7;
+            this.Buttonaccessibility.Text = "  ๐ Accessibility";
+            this.Buttonaccessibility.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buttonaccessibility.TextColor = System.Drawing.Color.Black;
+            this.Buttonaccessibility.UseVisualStyleBackColor = false;
+            this.Buttonaccessibility.Click += new System.EventHandler(this.Buttonaccessibility_Click);
             // 
             // Buttonreport
             // 
@@ -191,7 +271,7 @@ namespace SML___Pokayoke_System
             this.Buttonreport.ForeColor = System.Drawing.Color.White;
             this.Buttonreport.Image = ((System.Drawing.Image)(resources.GetObject("Buttonreport.Image")));
             this.Buttonreport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Buttonreport.Location = new System.Drawing.Point(3, 511);
+            this.Buttonreport.Location = new System.Drawing.Point(3, 299);
             this.Buttonreport.Name = "Buttonreport";
             this.Buttonreport.Size = new System.Drawing.Size(330, 100);
             this.Buttonreport.TabIndex = 6;
@@ -203,25 +283,25 @@ namespace SML___Pokayoke_System
             // 
             // ButtonAddpartlists
             // 
-            this.ButtonAddpartlists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
-            this.ButtonAddpartlists.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.ButtonAddpartlists.BackColor = System.Drawing.Color.Snow;
+            this.ButtonAddpartlists.BackgroundColor = System.Drawing.Color.Snow;
             this.ButtonAddpartlists.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.ButtonAddpartlists.BorderRadius = 40;
             this.ButtonAddpartlists.BorderSize = 0;
             this.ButtonAddpartlists.FlatAppearance.BorderSize = 0;
             this.ButtonAddpartlists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAddpartlists.Font = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Bold);
-            this.ButtonAddpartlists.ForeColor = System.Drawing.Color.White;
-            this.ButtonAddpartlists.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAddpartlists.Image")));
+            this.ButtonAddpartlists.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.ButtonAddpartlists.ForeColor = System.Drawing.Color.Black;
             this.ButtonAddpartlists.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.ButtonAddpartlists.Location = new System.Drawing.Point(3, 405);
+            this.ButtonAddpartlists.Location = new System.Drawing.Point(24, 557);
             this.ButtonAddpartlists.Name = "ButtonAddpartlists";
-            this.ButtonAddpartlists.Size = new System.Drawing.Size(330, 100);
+            this.ButtonAddpartlists.Size = new System.Drawing.Size(300, 40);
             this.ButtonAddpartlists.TabIndex = 5;
-            this.ButtonAddpartlists.Text = "Add Part lists";
-            this.ButtonAddpartlists.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ButtonAddpartlists.TextColor = System.Drawing.Color.White;
+            this.ButtonAddpartlists.Text = "  ๐ Add Part list";
+            this.ButtonAddpartlists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonAddpartlists.TextColor = System.Drawing.Color.Black;
             this.ButtonAddpartlists.UseVisualStyleBackColor = false;
+            this.ButtonAddpartlists.Visible = false;
             this.ButtonAddpartlists.Click += new System.EventHandler(this.ButtonAddpartlists_Click);
             // 
             // pictureBox2
@@ -281,25 +361,25 @@ namespace SML___Pokayoke_System
             // 
             // ButtonAddvinno
             // 
-            this.ButtonAddvinno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
-            this.ButtonAddvinno.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.ButtonAddvinno.BackColor = System.Drawing.Color.Snow;
+            this.ButtonAddvinno.BackgroundColor = System.Drawing.Color.Snow;
             this.ButtonAddvinno.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.ButtonAddvinno.BorderRadius = 40;
             this.ButtonAddvinno.BorderSize = 0;
             this.ButtonAddvinno.FlatAppearance.BorderSize = 0;
             this.ButtonAddvinno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAddvinno.Font = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Bold);
-            this.ButtonAddvinno.ForeColor = System.Drawing.Color.White;
-            this.ButtonAddvinno.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAddvinno.Image")));
+            this.ButtonAddvinno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.ButtonAddvinno.ForeColor = System.Drawing.Color.Black;
             this.ButtonAddvinno.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.ButtonAddvinno.Location = new System.Drawing.Point(3, 299);
+            this.ButtonAddvinno.Location = new System.Drawing.Point(24, 649);
             this.ButtonAddvinno.Name = "ButtonAddvinno";
-            this.ButtonAddvinno.Size = new System.Drawing.Size(330, 100);
+            this.ButtonAddvinno.Size = new System.Drawing.Size(300, 40);
             this.ButtonAddvinno.TabIndex = 2;
-            this.ButtonAddvinno.Text = "Add Vin Number";
-            this.ButtonAddvinno.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ButtonAddvinno.TextColor = System.Drawing.Color.White;
+            this.ButtonAddvinno.Text = "  ๐ Import - Vin Number";
+            this.ButtonAddvinno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonAddvinno.TextColor = System.Drawing.Color.Black;
             this.ButtonAddvinno.UseVisualStyleBackColor = false;
+            this.ButtonAddvinno.Visible = false;
             this.ButtonAddvinno.Click += new System.EventHandler(this.ButtonAddvinno_Click);
             // 
             // Buttonsetting
@@ -315,7 +395,7 @@ namespace SML___Pokayoke_System
             this.Buttonsetting.ForeColor = System.Drawing.Color.White;
             this.Buttonsetting.Image = ((System.Drawing.Image)(resources.GetObject("Buttonsetting.Image")));
             this.Buttonsetting.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Buttonsetting.Location = new System.Drawing.Point(3, 617);
+            this.Buttonsetting.Location = new System.Drawing.Point(3, 405);
             this.Buttonsetting.Name = "Buttonsetting";
             this.Buttonsetting.Size = new System.Drawing.Size(330, 100);
             this.Buttonsetting.TabIndex = 2;
@@ -324,6 +404,91 @@ namespace SML___Pokayoke_System
             this.Buttonsetting.TextColor = System.Drawing.Color.White;
             this.Buttonsetting.UseVisualStyleBackColor = false;
             this.Buttonsetting.Click += new System.EventHandler(this.Buttonsetting_Click);
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 40;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Location = new System.Drawing.Point(7, 511);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(150, 40);
+            this.rjButton1.TabIndex = 8;
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            // 
+            // rjButton5
+            // 
+            this.rjButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.rjButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.rjButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton5.BorderRadius = 40;
+            this.rjButton5.BorderSize = 0;
+            this.rjButton5.FlatAppearance.BorderSize = 0;
+            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton5.ForeColor = System.Drawing.Color.White;
+            this.rjButton5.Location = new System.Drawing.Point(7, 695);
+            this.rjButton5.Name = "rjButton5";
+            this.rjButton5.Size = new System.Drawing.Size(150, 40);
+            this.rjButton5.TabIndex = 9;
+            this.rjButton5.TextColor = System.Drawing.Color.White;
+            this.rjButton5.UseVisualStyleBackColor = false;
+            // 
+            // rjButton4
+            // 
+            this.rjButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.rjButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.rjButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton4.BorderRadius = 40;
+            this.rjButton4.BorderSize = 0;
+            this.rjButton4.FlatAppearance.BorderSize = 0;
+            this.rjButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton4.ForeColor = System.Drawing.Color.White;
+            this.rjButton4.Location = new System.Drawing.Point(7, 649);
+            this.rjButton4.Name = "rjButton4";
+            this.rjButton4.Size = new System.Drawing.Size(150, 40);
+            this.rjButton4.TabIndex = 9;
+            this.rjButton4.TextColor = System.Drawing.Color.White;
+            this.rjButton4.UseVisualStyleBackColor = false;
+            // 
+            // rjButton3
+            // 
+            this.rjButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.rjButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.rjButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton3.BorderRadius = 40;
+            this.rjButton3.BorderSize = 0;
+            this.rjButton3.FlatAppearance.BorderSize = 0;
+            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton3.ForeColor = System.Drawing.Color.White;
+            this.rjButton3.Location = new System.Drawing.Point(7, 603);
+            this.rjButton3.Name = "rjButton3";
+            this.rjButton3.Size = new System.Drawing.Size(150, 40);
+            this.rjButton3.TabIndex = 9;
+            this.rjButton3.TextColor = System.Drawing.Color.White;
+            this.rjButton3.UseVisualStyleBackColor = false;
+            // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton2.BorderRadius = 40;
+            this.rjButton2.BorderSize = 0;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.ForeColor = System.Drawing.Color.White;
+            this.rjButton2.Location = new System.Drawing.Point(7, 557);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(150, 40);
+            this.rjButton2.TabIndex = 9;
+            this.rjButton2.TextColor = System.Drawing.Color.White;
+            this.rjButton2.UseVisualStyleBackColor = false;
             // 
             // labelsubject
             // 
@@ -394,5 +559,13 @@ namespace SML___Pokayoke_System
         private RJ_Button.RJButton ButtonAddpartlists;
         private System.Windows.Forms.PictureBox pictureBox3;
         private RJ_Button.RJButton Buttonreport;
+        private RJ_Button.RJButton Buttonpartnumber_im;
+        private RJ_Button.RJButton Buttonaccessibility;
+        private RJ_Button.RJButton rjButton1;
+        private RJ_Button.RJButton rjButton4;
+        private RJ_Button.RJButton rjButton3;
+        private RJ_Button.RJButton rjButton2;
+        private RJ_Button.RJButton rjButton5;
+        private RJ_Button.RJButton Buttonaddstock;
     }
 }

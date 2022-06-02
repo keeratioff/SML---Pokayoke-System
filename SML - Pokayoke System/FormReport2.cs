@@ -17,8 +17,9 @@ using excel = Microsoft.Office.Interop.Excel;
 
 namespace SML___Pokayoke_System
 {
-    public partial class FormReport : Form
+    public partial class FormReport2 : Form
     {
+
         public static string Local_Conn;
         public static string Catalog_Local;
         public static string Ip_Addr_Local;
@@ -26,12 +27,12 @@ namespace SML___Pokayoke_System
         public static string Sql_pw_Local;
         public static string Location_File_Tmp;
 
-        public FormReport()
+        public FormReport2()
         {
             InitializeComponent();
         }
 
-        private void FormReport_Load(object sender, EventArgs e)
+        private void FormReport2_Load(object sender, EventArgs e)
         {
             Location_File_Tmp = "C:/SSS";
             Read_Systemfile(Location_File_Tmp + "\\System file local.txt");
@@ -90,35 +91,36 @@ namespace SML___Pokayoke_System
         }
         #endregion
 
-        #region "Create_table"
+        #region "Create tabel"
         private void Create_table()
         {
             metroGridReport.Columns.Clear();
             metroGridReport.Rows.Clear();
-            metroGridReport.ColumnCount = 6;
-            metroGridReport.Columns[0].HeaderText = "Employee";
-            metroGridReport.Columns[1].HeaderText = "Vin No.";
-            metroGridReport.Columns[2].HeaderText = "Model Code";
-            metroGridReport.Columns[3].HeaderText = "Part list";
-            metroGridReport.Columns[4].HeaderText = "Date Time";
-            metroGridReport.Columns[5].HeaderText = "Status";
+            metroGridReport.ColumnCount = 7;
+            metroGridReport.Columns[0].HeaderText = "Name";
+            metroGridReport.Columns[1].HeaderText = "Part no";
+            metroGridReport.Columns[2].HeaderText = "Part name";
+            metroGridReport.Columns[3].HeaderText = "Spine Code";
+            metroGridReport.Columns[4].HeaderText = "Vendor";
+            metroGridReport.Columns[5].HeaderText = "Withdraw qty.";
+            metroGridReport.Columns[6].HeaderText = "Date Time";
         }
         #endregion
 
-        #region "ShowGrid"
+        #region "Show Grid"
         private void ShowGrid()
         {
             var dt = new DataTable();
             using (var conn = new SqlConnection(Local_Conn))
             {
                 var cmd = conn.CreateCommand();
-                cmd.CommandText = "Select * from data_log_local";
+                cmd.CommandText = "Select * from data_log_stock_local";
                 var sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
             }
             foreach (DataRow dr in dt.Rows)
             {
-                metroGridReport.Rows.Add(dr["name"], dr["vin_no"], dr["model_code"], dr["part_list"], dr["date"], dr["status"]);
+                metroGridReport.Rows.Add(dr["name"], dr["part_no"], dr["part_name"], dr["spine_code"], dr["vendor"], dr["part_withdraw_qty"], dr["date"]);
             }
         }
         #endregion
@@ -131,26 +133,25 @@ namespace SML___Pokayoke_System
                 string start_date_ = metroDateTimestart.Value.ToString("yyyyMMdd");
                 string end_date_ = metroDateTimeend.Value.ToString("yyyyMMdd");
 
-                string[] start_date= start_date_.Split(' ');
+                string[] start_date = start_date_.Split(' ');
                 string[] end_date = end_date_.Split(' ');
-
 
                 Create_table();
                 var dt = new DataTable();
                 using (var conn = new SqlConnection(Local_Conn))
                 {
                     var cmd = conn.CreateCommand();
-                    var sda = new SqlDataAdapter("Select * from data_log_local where date between '" + start_date[0] + "' and '" + end_date[0] + "'", conn);
+                    var sda = new SqlDataAdapter("Select * from data_log_stock_local where date between '" + start_date[0] + "' and '" + end_date[0] + "'", conn);
                     sda.Fill(dt);
                 }
                 foreach (DataRow dr in dt.Rows)
                 {
-                    metroGridReport.Rows.Add(dr["name"], dr["vin_no"], dr["model_code"], dr["part_list"], dr["date"], dr["status"]);
+                    metroGridReport.Rows.Add(dr["name"], dr["part_no"], dr["part_name"], dr["spine_code"], dr["vendor"], dr["part_withdraw_qty"], dr["date"]);
                 }
             }
             catch (Exception error)
             {
-                _ = new LogWriter.LogWriter($" Message: {0}, {error.Message}");
+                _ = new LogWriter.LogWriter($"   Message: {0}, {error.Message}");
             }
         }
         #endregion
@@ -158,38 +159,20 @@ namespace SML___Pokayoke_System
         #region "Button Clear"
         private void Buttonclear_Click(object sender, EventArgs e)
         {
-            Create_table();
-            ShowGrid();
-            textBox1.Text = "Search ( Vin.No )";
-        }
-        #endregion
-
-        #region "TextChange"
-        private void textBox1_MouseUp(object sender, MouseEventArgs e)
-        {
-            textBox1.Text = "";
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            Create_table();
-            var dt = new DataTable();
-            using (var conn = new SqlConnection(Local_Conn))
+            try
             {
-                var check = conn.CreateCommand();
-                check.CommandText = $"Select * From data_log_local Where vin_no = '{textBox1.Text}'";
-                var sda = new SqlDataAdapter(check);
-                sda.Fill(dt);
+                Create_table();
+                ShowGrid();
+                textBox1.Text = "Search ( Vin.No )";
             }
-            foreach (DataRow dr in dt.Rows)
+            catch (Exception error)
             {
-                metroGridReport.Rows.Add(dr["name"], dr["vin_no"], dr["model_code"], dr["part_list"], dr["date"], dr["status"]);
+                _ = new LogWriter.LogWriter($"   Message: {0}, {error.Message}");
             }
         }
         #endregion
 
-        #region "Button Export Excel"
+        #region "Button Export"
         private void Buttonexport_Click(object sender, EventArgs e)
         {
             try
@@ -212,7 +195,7 @@ namespace SML___Pokayoke_System
                 }
                 worksheet.Columns.AutoFit();
                 var saveFileDialoge = new SaveFileDialog();
-                saveFileDialoge.FileName = "Report Master Store" + "_" + DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day;
+                saveFileDialoge.FileName = "Report Master Store Stock" + "_" + DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day;
                 saveFileDialoge.Filter = "XLSX|*.xlsx";
                 if (saveFileDialoge.ShowDialog() == DialogResult.OK)
                 {
@@ -236,7 +219,6 @@ namespace SML___Pokayoke_System
             }
         }
         #endregion
-
 
     }
 }

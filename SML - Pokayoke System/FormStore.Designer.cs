@@ -36,6 +36,7 @@ namespace SML___Pokayoke_System
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStore));
             this.textBoxvinno = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxmodel = new System.Windows.Forms.TextBox();
@@ -54,18 +55,28 @@ namespace SML___Pokayoke_System
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.timercheckpartlist = new System.Windows.Forms.Timer(this.components);
             this.textBoxalarm = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxoperationname = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labeltest = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.Buttonclear = new SML___Pokayoke_System.RJ_Button.RJButton();
             this.Buttonsave = new SML___Pokayoke_System.RJ_Button.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxvinno
             // 
             this.textBoxvinno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBoxvinno.Location = new System.Drawing.Point(151, 155);
+            this.textBoxvinno.Location = new System.Drawing.Point(176, 155);
             this.textBoxvinno.Multiline = true;
             this.textBoxvinno.Name = "textBoxvinno";
             this.textBoxvinno.Size = new System.Drawing.Size(399, 30);
@@ -87,7 +98,7 @@ namespace SML___Pokayoke_System
             // textBoxmodel
             // 
             this.textBoxmodel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBoxmodel.Location = new System.Drawing.Point(151, 195);
+            this.textBoxmodel.Location = new System.Drawing.Point(176, 195);
             this.textBoxmodel.Multiline = true;
             this.textBoxmodel.Name = "textBoxmodel";
             this.textBoxmodel.Size = new System.Drawing.Size(399, 30);
@@ -108,7 +119,7 @@ namespace SML___Pokayoke_System
             // textBoxbuyer
             // 
             this.textBoxbuyer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBoxbuyer.Location = new System.Drawing.Point(151, 235);
+            this.textBoxbuyer.Location = new System.Drawing.Point(176, 235);
             this.textBoxbuyer.Multiline = true;
             this.textBoxbuyer.Name = "textBoxbuyer";
             this.textBoxbuyer.Size = new System.Drawing.Size(399, 30);
@@ -129,7 +140,7 @@ namespace SML___Pokayoke_System
             // textBoxname
             // 
             this.textBoxname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBoxname.Location = new System.Drawing.Point(151, 77);
+            this.textBoxname.Location = new System.Drawing.Point(176, 116);
             this.textBoxname.Multiline = true;
             this.textBoxname.Name = "textBoxname";
             this.textBoxname.Size = new System.Drawing.Size(399, 30);
@@ -138,7 +149,7 @@ namespace SML___Pokayoke_System
             // textBoxdate
             // 
             this.textBoxdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBoxdate.Location = new System.Drawing.Point(151, 115);
+            this.textBoxdate.Location = new System.Drawing.Point(176, 77);
             this.textBoxdate.Multiline = true;
             this.textBoxdate.Name = "textBoxdate";
             this.textBoxdate.Size = new System.Drawing.Size(399, 30);
@@ -150,7 +161,7 @@ namespace SML___Pokayoke_System
             this.label8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(62, 77);
+            this.label8.Location = new System.Drawing.Point(62, 116);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 24);
             this.label8.TabIndex = 2;
@@ -162,7 +173,7 @@ namespace SML___Pokayoke_System
             this.label9.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(62, 115);
+            this.label9.Location = new System.Drawing.Point(62, 77);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 24);
             this.label9.TabIndex = 2;
@@ -196,7 +207,7 @@ namespace SML___Pokayoke_System
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(17, 28);
+            this.metroGrid1.Location = new System.Drawing.Point(6, 28);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -211,7 +222,7 @@ namespace SML___Pokayoke_System
             this.metroGrid1.RowHeadersWidth = 10;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(527, 254);
+            this.metroGrid1.Size = new System.Drawing.Size(769, 254);
             this.metroGrid1.TabIndex = 40;
             // 
             // metroGrid2
@@ -242,7 +253,7 @@ namespace SML___Pokayoke_System
             this.metroGrid2.EnableHeadersVisualStyles = false;
             this.metroGrid2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid2.Location = new System.Drawing.Point(18, 28);
+            this.metroGrid2.Location = new System.Drawing.Point(6, 28);
             this.metroGrid2.Name = "metroGrid2";
             this.metroGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -257,16 +268,16 @@ namespace SML___Pokayoke_System
             this.metroGrid2.RowHeadersWidth = 10;
             this.metroGrid2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid2.Size = new System.Drawing.Size(527, 254);
+            this.metroGrid2.Size = new System.Drawing.Size(437, 254);
             this.metroGrid2.TabIndex = 40;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.metroGrid1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.groupBox1.Location = new System.Drawing.Point(47, 301);
+            this.groupBox1.Location = new System.Drawing.Point(2, 317);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(563, 295);
+            this.groupBox1.Size = new System.Drawing.Size(781, 295);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "อุปกรณ์ที่ต้องจ่าย";
@@ -297,9 +308,9 @@ namespace SML___Pokayoke_System
             // 
             this.groupBox2.Controls.Add(this.metroGrid2);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.groupBox2.Location = new System.Drawing.Point(642, 301);
+            this.groupBox2.Location = new System.Drawing.Point(789, 317);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(563, 295);
+            this.groupBox2.Size = new System.Drawing.Size(449, 295);
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "เตรียมเข้าระบบ";
@@ -308,12 +319,96 @@ namespace SML___Pokayoke_System
             // 
             this.textBoxalarm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxalarm.ForeColor = System.Drawing.Color.Firebrick;
-            this.textBoxalarm.Location = new System.Drawing.Point(2, 670);
+            this.textBoxalarm.Location = new System.Drawing.Point(2, 674);
             this.textBoxalarm.Multiline = true;
             this.textBoxalarm.Name = "textBoxalarm";
-            this.textBoxalarm.Size = new System.Drawing.Size(1252, 36);
+            this.textBoxalarm.Size = new System.Drawing.Size(1252, 32);
             this.textBoxalarm.TabIndex = 45;
             this.textBoxalarm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(642, 37);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(560, 245);
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(62, 280);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 24);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "Operation : ";
+            // 
+            // textBoxoperationname
+            // 
+            this.textBoxoperationname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBoxoperationname.Location = new System.Drawing.Point(176, 277);
+            this.textBoxoperationname.Multiline = true;
+            this.textBoxoperationname.Name = "textBoxoperationname";
+            this.textBoxoperationname.Size = new System.Drawing.Size(399, 30);
+            this.textBoxoperationname.TabIndex = 47;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(789, 291);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(278, 20);
+            this.textBox1.TabIndex = 49;
+            this.textBox1.Visible = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1073, 291);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 50;
+            this.button1.Text = "Click";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(699, 291);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 18);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Test Input : ";
+            this.label7.Visible = false;
+            // 
+            // labeltest
+            // 
+            this.labeltest.AutoSize = true;
+            this.labeltest.BackColor = System.Drawing.Color.White;
+            this.labeltest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.labeltest.Location = new System.Drawing.Point(320, 27);
+            this.labeltest.Name = "labeltest";
+            this.labeltest.Size = new System.Drawing.Size(70, 24);
+            this.labeltest.TabIndex = 51;
+            this.labeltest.Text = "label10";
+            this.labeltest.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Buttonclear
             // 
@@ -326,7 +421,7 @@ namespace SML___Pokayoke_System
             this.Buttonclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buttonclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Buttonclear.ForeColor = System.Drawing.Color.White;
-            this.Buttonclear.Location = new System.Drawing.Point(768, 602);
+            this.Buttonclear.Location = new System.Drawing.Point(768, 618);
             this.Buttonclear.Name = "Buttonclear";
             this.Buttonclear.Size = new System.Drawing.Size(350, 50);
             this.Buttonclear.TabIndex = 4;
@@ -346,7 +441,7 @@ namespace SML___Pokayoke_System
             this.Buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buttonsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Buttonsave.ForeColor = System.Drawing.Color.White;
-            this.Buttonsave.Location = new System.Drawing.Point(151, 602);
+            this.Buttonsave.Location = new System.Drawing.Point(151, 618);
             this.Buttonsave.Name = "Buttonsave";
             this.Buttonsave.Size = new System.Drawing.Size(350, 50);
             this.Buttonsave.TabIndex = 4;
@@ -361,12 +456,19 @@ namespace SML___Pokayoke_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1256, 709);
+            this.Controls.Add(this.labeltest);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBoxoperationname);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxalarm);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Buttonclear);
             this.Controls.Add(this.Buttonsave);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
@@ -381,11 +483,13 @@ namespace SML___Pokayoke_System
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormStore";
             this.Text = "FormStore";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormStore_FormClosing);
             this.Load += new System.EventHandler(this.FormStore_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,5 +517,14 @@ namespace SML___Pokayoke_System
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Timer timercheckpartlist;
         private System.Windows.Forms.TextBox textBoxalarm;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxoperationname;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labeltest;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }

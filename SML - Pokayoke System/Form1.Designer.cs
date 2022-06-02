@@ -53,7 +53,7 @@ namespace SML___Pokayoke_System
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(751, 383);
+            this.label1.Location = new System.Drawing.Point(720, 395);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 20);
             this.label1.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace SML___Pokayoke_System
             // 
             this.labelregister.AutoSize = true;
             this.labelregister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelregister.Location = new System.Drawing.Point(934, 383);
+            this.labelregister.Location = new System.Drawing.Point(903, 395);
             this.labelregister.Name = "labelregister";
             this.labelregister.Size = new System.Drawing.Size(116, 20);
             this.labelregister.TabIndex = 16;
@@ -74,7 +74,7 @@ namespace SML___Pokayoke_System
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(768, 191);
+            this.pictureBox1.Location = new System.Drawing.Point(737, 203);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 18;
@@ -84,7 +84,7 @@ namespace SML___Pokayoke_System
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(768, 247);
+            this.pictureBox2.Location = new System.Drawing.Point(737, 259);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
             this.pictureBox2.TabIndex = 19;
@@ -96,7 +96,7 @@ namespace SML___Pokayoke_System
             this.textBoxusername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.textBoxusername.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxusername.Location = new System.Drawing.Point(804, 191);
+            this.textBoxusername.Location = new System.Drawing.Point(773, 203);
             this.textBoxusername.Multiline = true;
             this.textBoxusername.Name = "textBoxusername";
             this.textBoxusername.Size = new System.Drawing.Size(230, 30);
@@ -111,7 +111,7 @@ namespace SML___Pokayoke_System
             this.textBoxpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textBoxpassword.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxpassword.Location = new System.Drawing.Point(804, 247);
+            this.textBoxpassword.Location = new System.Drawing.Point(773, 259);
             this.textBoxpassword.Multiline = true;
             this.textBoxpassword.Name = "textBoxpassword";
             this.textBoxpassword.Size = new System.Drawing.Size(230, 30);
@@ -125,10 +125,10 @@ namespace SML___Pokayoke_System
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Stencil", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(791, 66);
+            this.label2.Font = new System.Drawing.Font("Impact", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(732, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(221, 76);
+            this.label2.Size = new System.Drawing.Size(271, 117);
             this.label2.TabIndex = 22;
             this.label2.Text = "LOGIN";
             // 
@@ -144,11 +144,11 @@ namespace SML___Pokayoke_System
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1104, 481);
+            this.label3.Location = new System.Drawing.Point(1091, 481);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 13);
+            this.label3.Size = new System.Drawing.Size(105, 13);
             this.label3.TabIndex = 31;
-            this.label3.Text = "Version : 1.0.0.0";
+            this.label3.Text = "Version : 4.22.7.22.0";
             // 
             // Buttonexit
             // 
@@ -180,7 +180,7 @@ namespace SML___Pokayoke_System
             this.Buttonlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buttonlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Buttonlogin.ForeColor = System.Drawing.Color.White;
-            this.Buttonlogin.Location = new System.Drawing.Point(750, 310);
+            this.Buttonlogin.Location = new System.Drawing.Point(719, 322);
             this.Buttonlogin.Name = "Buttonlogin";
             this.Buttonlogin.Size = new System.Drawing.Size(300, 70);
             this.Buttonlogin.TabIndex = 0;
@@ -199,7 +199,7 @@ namespace SML___Pokayoke_System
             this.rjButton2.FlatAppearance.BorderSize = 0;
             this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Location = new System.Drawing.Point(750, 235);
+            this.rjButton2.Location = new System.Drawing.Point(719, 247);
             this.rjButton2.Name = "rjButton2";
             this.rjButton2.Size = new System.Drawing.Size(300, 50);
             this.rjButton2.TabIndex = 0;
@@ -216,7 +216,7 @@ namespace SML___Pokayoke_System
             this.rjButton1.FlatAppearance.BorderSize = 0;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(750, 179);
+            this.rjButton1.Location = new System.Drawing.Point(719, 191);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(300, 50);
             this.rjButton1.TabIndex = 0;
@@ -233,9 +233,9 @@ namespace SML___Pokayoke_System
             this.rjButton6.FlatAppearance.BorderSize = 0;
             this.rjButton6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rjButton6.ForeColor = System.Drawing.Color.White;
-            this.rjButton6.Location = new System.Drawing.Point(-34, 30);
+            this.rjButton6.Location = new System.Drawing.Point(-38, 12);
             this.rjButton6.Name = "rjButton6";
-            this.rjButton6.Size = new System.Drawing.Size(1148, 448);
+            this.rjButton6.Size = new System.Drawing.Size(1148, 466);
             this.rjButton6.TabIndex = 27;
             this.rjButton6.TextColor = System.Drawing.Color.White;
             this.rjButton6.UseVisualStyleBackColor = false;

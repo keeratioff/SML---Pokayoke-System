@@ -82,5 +82,17 @@ namespace SML___Pokayoke_System.Properties {
                 this["user_level"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool statusport {
+            get {
+                return ((bool)(this["statusport"]));
+            }
+            set {
+                this["statusport"] = value;
+            }
+        }
     }
 }

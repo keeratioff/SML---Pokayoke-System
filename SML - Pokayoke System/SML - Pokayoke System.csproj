@@ -102,6 +102,18 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMainReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMainReport.Designer.cs">
+      <DependentUpon>FormMainReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMainSettingAddStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMainSettingAddStock.Designer.cs">
+      <DependentUpon>FormMainSettingAddStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMaintenance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,12 @@
     <Compile Include="FormReport.Designer.cs">
       <DependentUpon>FormReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReport2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReport2.Designer.cs">
+      <DependentUpon>FormReport2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,23 +150,29 @@
     <Compile Include="FormSettingAccessibility.Designer.cs">
       <DependentUpon>FormSettingAccessibility.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSettingModel.cs">
+    <Compile Include="FormSettingAddStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSettingModel.Designer.cs">
-      <DependentUpon>FormSettingModel.cs</DependentUpon>
+    <Compile Include="FormSettingAddStock.Designer.cs">
+      <DependentUpon>FormSettingAddStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSettingEditStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSettingEditStock.Designer.cs">
+      <DependentUpon>FormSettingEditStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSettingpart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSettingpart.Designer.cs">
+      <DependentUpon>FormSettingpart.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSettingPartNumber.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSettingPartNumber.Designer.cs">
       <DependentUpon>FormSettingPartNumber.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormSettingVinNumber.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSettingVinNumber.Designer.cs">
-      <DependentUpon>FormSettingVinNumber.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStore.cs">
       <SubType>Form</SubType>
@@ -178,6 +202,12 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMainReport.resx">
+      <DependentUpon>FormMainReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMainSettingAddStock.resx">
+      <DependentUpon>FormMainSettingAddStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMaintenance.resx">
       <DependentUpon>FormMaintenance.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,20 +217,26 @@
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReport2.resx">
+      <DependentUpon>FormReport2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSettingAccessibility.resx">
       <DependentUpon>FormSettingAccessibility.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSettingModel.resx">
-      <DependentUpon>FormSettingModel.cs</DependentUpon>
+    <EmbeddedResource Include="FormSettingAddStock.resx">
+      <DependentUpon>FormSettingAddStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSettingEditStock.resx">
+      <DependentUpon>FormSettingEditStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSettingpart.resx">
+      <DependentUpon>FormSettingpart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSettingPartNumber.resx">
       <DependentUpon>FormSettingPartNumber.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormSettingVinNumber.resx">
-      <DependentUpon>FormSettingVinNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStore.resx">
       <DependentUpon>FormStore.cs</DependentUpon>
